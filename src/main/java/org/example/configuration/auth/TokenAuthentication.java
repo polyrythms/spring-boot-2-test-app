@@ -5,10 +5,15 @@ import org.springframework.security.authentication.AbstractAuthenticationToken;
 import java.util.Collections;
 
 public class TokenAuthentication extends AbstractAuthenticationToken {
-    private String token;
+    private final String token;
 
     public TokenAuthentication(String token) {
         super(Collections.emptyList());
+        this.token = token;
+    }
+
+    public String getToken() {
+        return token;
     }
 
     @Override
